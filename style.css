@@ -95,6 +95,8 @@ p {
 
 /* Feature */
 .feature__image {
+  /* max-width: 45.62rem;
+  max-height: 18.75rem; */
 }
 
 .feature__headline {
@@ -118,6 +120,39 @@ p {
 }
 
 /* New */
+
+.new {
+  background-color: var(--cl-neutral-very-dark-blue);
+  padding: 1.5rem 1.25rem;
+  & h2 {
+    font-size: var(--f-l);
+    color: var(--cl-primary-soft-orange);
+  }
+  &:last-child {
+    outline: 1px solid red;
+  }
+}
+
+.new__post {
+  border-block-end: 1px solid var(--cl-neutral-dark-grayish-blue);
+  padding-block: 1.875rem;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.new__headline a {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--cl-neutral-off-white);
+  margin-bottom: 0.5rem;
+}
+
+.new__description {
+  font-size: var(--f-body);
+  color: var(--cl-neutral-grayish-blue);
+}
 
 .attribution {
   font-size: 11px;

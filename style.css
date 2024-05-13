@@ -39,7 +39,7 @@ body {
 
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -75,6 +75,16 @@ p {
   margin-inline: auto;
 }
 
+.grid {
+  display: grid;
+  gap: 4rem;
+  @media (width >= 69.37em) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 18.75rem auto auto;
+    gap: 1.875rem;
+  }
+}
+
 /* Header */
 .header__logo {
   width: 2.81rem;
@@ -95,6 +105,23 @@ p {
 }
 
 /* Feature */
+.feature {
+  display: grid;
+  gap: 1.5rem;
+  @media (width >= 69.37em) {
+    grid-column: span 2;
+    grid-row: span 2;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+  }
+}
+
+.feature__picture {
+  @media (width >= 69.37em) {
+    grid-column: span 2;
+  }
+}
+
 .feature__image {
   /* max-width: 45.62rem;
   max-height: 18.75rem; */
@@ -107,6 +134,10 @@ p {
 
 .feature__description {
   /* font - inherit > body */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.875rem;
 }
 
 .feature__button {
@@ -124,6 +155,10 @@ p {
 .new {
   background-color: var(--cl-neutral-very-dark-blue);
   padding: 1.5rem 1.25rem;
+  @media (width >= 69.37em) {
+    grid-column: 3/4;
+    grid-row: span 2;
+  }
   & h2 {
     font-size: var(--f-l);
     color: var(--cl-primary-soft-orange);
@@ -158,9 +193,10 @@ p {
 .blog {
   display: grid;
   gap: 1.875rem;
-  /* @media (width >= 69.37em) {
-    grid-template-columns: repeat(3, calc(69.37rem / 3));
-  } */
+  @media (width >= 69.37em) {
+    grid-template-columns: subgrid;
+    grid-column: 1/-1;
+  }
 }
 
 .blog__item {

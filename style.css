@@ -30,6 +30,7 @@
 }
 
 body {
+  position: relative;
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
   font-size: var(--f-body);
@@ -155,6 +156,7 @@ p {
   /* font - inherit > body */
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: start;
   gap: 1.875rem;
 }
@@ -177,7 +179,7 @@ p {
 /* New */
 .new {
   background-color: var(--cl-neutral-very-dark-blue);
-  padding: 1.5rem 1.25rem;
+  padding: 2rem 1.25rem 0; /* ? 0 */
   @media (width >= 69.37em) {
     grid-column: 3/4;
     grid-row: span 2;
@@ -193,7 +195,8 @@ p {
 
 .new__post {
   border-block-end: 1px solid var(--cl-neutral-dark-grayish-blue);
-  padding-block: 1.875rem;
+  /* padding-block: 1.875rem; */
+  padding-block: 2rem;
   &:last-child {
     border-bottom: none;
   }

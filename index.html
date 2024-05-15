@@ -26,7 +26,26 @@
             height="40"
           />
         </a>
-        <nav>
+        <nav class="nav" aria-label="Site">
+          <button
+            id="btnOpen"
+            class="nav__open"
+            aria-labelledby="nav-label"
+            aria-expanded="false"
+          >
+            <span id="nav-label" hidden>Navigation</span>
+            <svg
+              width="40"
+              height="17"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <g fill="#00001A" fill-rule="evenodd">
+                <path d="M0 0h40v3H0zM0 7h40v3H0zM0 14h40v3H0z" />
+                <path d="M0 0h40v3H0z" />
+              </g>
+            </svg>
+          </button>
           <ul class="header__links">
             <li><a class="header__link" href="">Home</a></li>
             <li><a class="header__link" href="">New</a></li>

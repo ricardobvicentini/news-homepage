@@ -108,6 +108,15 @@ p {
   }
 }
 
+.nav {
+  & button {
+    background-color: transparent;
+    border: none;
+  }
+  & .nav__content {
+  }
+}
+
 .header__links {
   @media (width >= 69.37em) {
     display: flex;

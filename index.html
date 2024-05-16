@@ -193,18 +193,35 @@
       const overlay = document.querySelector('.nav__overlay');
       const media = window.matchMedia('(width < 69.37em)');
 
+      function setupNav(event) {
+        if (event.matches) {
+          /* Delay 'block' to hide animation when reloading */
+          setTimeout(() => {
+            navContent.style.display = 'block';
+            overlay.style.display = 'block';
+          }, 500);
+        } else {
+          navContent.style.display = null;
+          overlay.style.display = null;
+        }
+      }
+
+      setupNav(media);
+
       media.addEventListener('change', (event) => {
-        console.log(event.matches);
-        /* navContent.style.display = event.matches ? 'block' : 'none'; */
-        /* overlay.style.display = event.matches ? 'block' : 'none'; */
+        navContent.style.display = event.matches ? 'block' : null;
+        overlay.style.display = event.matches ? 'block' : null;
+        if (!event.matches) {
+          closeMenu(btnOpen);
+        }
       });
 
-      function openCloseMenu(e) {
+      function openMenu(e) {
         e.target.setAttribute('aria-expanded', 'true');
       }
 
       btnOpen.onclick = (event) => {
-        openCloseMenu(event);
+        openMenu(event);
       };
     </script>
   </body>

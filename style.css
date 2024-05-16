@@ -93,6 +93,11 @@ p {
 
 /* Header */
 .header {
+  outline: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.875rem;
   @media (width >= 69.37em) {
     display: flex;
     justify-content: space-between;
@@ -110,16 +115,46 @@ p {
 
 .nav {
   & button {
+    display: block;
     background-color: transparent;
     border: none;
   }
   & .nav__content {
+    @media (width < 69.37em) {
+      position: fixed;
+      inset: 0 0 0 7.5rem;
+      translate: 100% 0;
+      background-color: var(--cl-neutral-off-white);
+      padding: 1.875rem;
+      transition: translate 500ms ease-in-out;
+    }
+  }
+  & .nav__close {
+    display: block;
+    margin-inline: auto 0;
+    margin-block: 0 5.375rem;
+  }
+  & .nav__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: var(--cl-neutral-very-dark-blue);
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+  }
+  & .fade-in-out {
+    opacity: 0.5;
+  }
+  & .slide-in-out {
+    translate: 0;
   }
 }
 
 .header__links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   @media (width >= 69.37em) {
-    display: flex;
+    flex-direction: row;
     gap: 2.5rem;
   }
 }

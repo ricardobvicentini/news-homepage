@@ -36,6 +36,9 @@ body {
   font-size: var(--f-body);
   color: var(--cl-neutral-dark-grayish-blue);
   line-height: 1.7;
+  &.noscroll {
+    overflow-y: hidden;
+  }
 }
 
 img {

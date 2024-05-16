@@ -12,6 +12,7 @@
 
     <title>Frontend Mentor | News homepage</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="main-wrapper">
@@ -64,11 +65,11 @@
               </svg>
             </button>
             <ul class="header__links">
-              <li><a class="header__link" href="">Home</a></li>
-              <li><a class="header__link" href="">New</a></li>
-              <li><a class="header__link" href="">Popular</a></li>
-              <li><a class="header__link" href="">Trending</a></li>
-              <li><a class="header__link" href="">Categories</a></li>
+              <li><a class="header__link" href="/">Home</a></li>
+              <li><a class="header__link" href="/">New</a></li>
+              <li><a class="header__link" href="/">Popular</a></li>
+              <li><a class="header__link" href="/">Trending</a></li>
+              <li><a class="header__link" href="/">Categories</a></li>
             </ul>
           </div>
         </nav>
@@ -100,7 +101,7 @@
                 the power of the platforms back into the hands of the people.
                 But is it really fulfilling its promise?
               </p>
-              <a class="feature__button">Read more</a>
+              <a href="" class="feature__button">Read more</a>
             </div>
           </section>
           <!-- New Section -->
@@ -186,43 +187,5 @@
         >.
       </p>
     </footer>
-    <script>
-      const btnOpen = document.getElementById('btnOpen');
-      const btnClose = document.getElementById('btnClose');
-      const navContent = document.querySelector('.nav__content');
-      const overlay = document.querySelector('.nav__overlay');
-      const media = window.matchMedia('(width < 69.37em)');
-
-      function setupNav(event) {
-        if (event.matches) {
-          /* Delay 'block' to hide animation when reloading */
-          setTimeout(() => {
-            navContent.style.display = 'block';
-            overlay.style.display = 'block';
-          }, 500);
-        } else {
-          navContent.style.display = null;
-          overlay.style.display = null;
-        }
-      }
-
-      setupNav(media);
-
-      media.addEventListener('change', (event) => {
-        navContent.style.display = event.matches ? 'block' : null;
-        overlay.style.display = event.matches ? 'block' : null;
-        if (!event.matches) {
-          closeMenu(btnOpen);
-        }
-      });
-
-      function openMenu(e) {
-        e.target.setAttribute('aria-expanded', 'true');
-      }
-
-      btnOpen.onclick = (event) => {
-        openMenu(event);
-      };
-    </script>
   </body>
 </html>

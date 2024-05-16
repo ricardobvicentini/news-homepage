@@ -40,11 +40,6 @@ setupNav(media);
 media.addEventListener('change', (event) => {
   navContent.style.display = event.matches ? 'block' : null;
   overlay.style.display = event.matches ? 'block' : null;
-  /* if (event.matches) {
-    setInert();
-  } else {
-    removeInert();
-  } */
   return event.matches ? setInert(navContent) : removeInert(navContent);
 });
 
@@ -59,6 +54,7 @@ btnOpen.onclick = (event) => {
   removeInert(navContent);
   setInert(main);
   setInert(footer);
+  btnClose.focus();
 };
 
 btnClose.onclick = (event) => {
@@ -68,4 +64,5 @@ btnClose.onclick = (event) => {
   setInert(navContent);
   removeInert(main);
   removeInert(footer);
+  btnOpen.focus();
 };

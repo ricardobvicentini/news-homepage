@@ -7,7 +7,8 @@ const btnClose = document.getElementById('btnClose');
 const navContent = document.querySelector('.nav__content');
 const overlay = document.querySelector('.nav__overlay');
 const footer = document.querySelector('footer');
-const media = window.matchMedia('(width < 69.37em)');
+/* const media = window.matchMedia('(width < 69.37em)'); */
+const media = window.matchMedia('(width < 41.68em)');
 
 /*  Inert functions to set and remove focus of hidden elements */
 function setInert(el) {

@@ -44,6 +44,10 @@ img {
   height: auto;
 }
 
+svg {
+  pointer-events: none;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
@@ -93,15 +97,11 @@ p {
 
 /* Header */
 .header {
-  outline: 1px solid red;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-block: 1.875rem;
   @media (width >= 69.37em) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding-block: 5.625rem 3.4375rem;
   }
 }
@@ -118,9 +118,24 @@ p {
     display: block;
     background-color: transparent;
     border: none;
+    cursor: pointer;
+    @media (width >= 69.37em) {
+      display: none;
+    }
+  }
+  & .nav__open[aria-expanded='true'] {
+    ~ .nav__overlay {
+      display: block;
+      opacity: 0.5;
+    }
+    ~ .nav__content {
+      display: block;
+      translate: 0;
+    }
   }
   & .nav__content {
     @media (width < 69.37em) {
+      display: none;
       position: fixed;
       inset: 0 0 0 7.5rem;
       translate: 100% 0;
@@ -130,22 +145,16 @@ p {
     }
   }
   & .nav__close {
-    display: block;
     margin-inline: auto 0;
     margin-block: 0 5.375rem;
   }
   & .nav__overlay {
+    display: none;
     position: absolute;
     inset: 0;
     background-color: var(--cl-neutral-very-dark-blue);
     opacity: 0;
     transition: opacity 300ms ease-in-out;
-  }
-  & .fade-in-out {
-    opacity: 0.5;
-  }
-  & .slide-in-out {
-    translate: 0;
   }
 }
 

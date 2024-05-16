@@ -186,5 +186,26 @@
         >.
       </p>
     </footer>
+    <script>
+      const btnOpen = document.getElementById('btnOpen');
+      const btnClose = document.getElementById('btnClose');
+      const navContent = document.querySelector('.nav__content');
+      const overlay = document.querySelector('.nav__overlay');
+      const media = window.matchMedia('(width < 69.37em)');
+
+      media.addEventListener('change', (event) => {
+        console.log(event.matches);
+        /* navContent.style.display = event.matches ? 'block' : 'none'; */
+        /* overlay.style.display = event.matches ? 'block' : 'none'; */
+      });
+
+      function openCloseMenu(e) {
+        e.target.setAttribute('aria-expanded', 'true');
+      }
+
+      btnOpen.onclick = (event) => {
+        openCloseMenu(event);
+      };
+    </script>
   </body>
 </html>
